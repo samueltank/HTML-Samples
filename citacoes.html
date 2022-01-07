@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citações</title>
+  <style>
+    *{
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <p style="color: royalblue;">Exemplo de citação em bloco:</p>
+  <p>De acordo com a wikipedia, um vetor é: <blockquote cite="https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)" title="Citação em bloco com a tag &lt;blockquote&gt;">Em matemática e física, um vetor é um elemento de um espaço vetorial. Para muitos espaços vetoriais específicos, os vetores receberam nomes específicos, que estão listados abaixo. Em geral, um vetor euclidiano é um objeto geométrico com comprimento e direção (e por isso é frequentemente representado como um raio ). Esses vetores podem ser adicionados uns aos outros ou escalados usando álgebra vetorial. Correspondentemente, um conjunto de vetores é chamado de espaço vetorial. Esses objetos são objeto de álgebra linear e podem ser caracterizados por sua dimensão.</blockquote></p>
+  <!-- Uma citação em bloco é utilizada quando o conteúdo da citação é grande e é referenciado por um link(através de um atributo "cite"). -->
+
+  <p>Exemplo de citação simples:</p>
+  <p>Uma vez, Sun Tzu disse: <q cite="https://www.pensador.com/frase/NzQzODU0/">A vitória está reservada para aqueles que estão dispostos a pagar o preço</q></p>
+  <!-- Uma citação simples é utilizada para marcar um pequeno trecho mencionado(através da tag <p>). É recomendado usar um atributo "cite" para referência. -->
+
+  <p>Exemplo de marcação de abreviatura/acrônimo:</p>
+  <p><abbr title="Hyper Text Markup Language">HTML</abbr> é uma linguagem de marcação utilizada para criar páginas web, criada por Tim berners-Lee em 1991.</p>
+  <!-- As abreviaturas são marcadas com a tag <abbr>, para auxiliar os navegadores e motores de busca a localizar o conteúdo mais facilmente. É fundamental acrescentar um atributo "title" para que o significado do acrônimo seja demonstrado quando o cursor do mouse pairar sobre o acrônimo. -->
+
+  <p>Exemplo de marcação de informações de contato do proprietário/autor:</p>
+  <address>Whitter by: Samuel Tank. <br> Visit us at: Example.com <br> Box 564, Disneyland <br> USA</address>
+  <!-- A tag <address> serve para marcar todo o conteúdo de contato do autor/proprietário da página em questão. O navegador deixa o conteído em itálico e acrescenta uma quebra de linha acima e abaixo do conteúdo. -->
+
+  <p>Exemplo de marcação de título de obra criativa:</p>
+  <q cite="Samuel Tank">Sun Tzu é dido como o autor intelectual do livro <cite>A Arte da Guerra</cite>; tal livro é lido como um estudo das táticas militares antigas aplicadas aos tempos atuais.</q>
+  <!-- A tag <cite> serve para marcar um título de uma obra criativa. E o atributo 'cite' serve para referênciar um URL ou nome do autor da citação. -->
+  
+  <p>Exemplo de substituição bidirecional:</p>
+  <p>O trecho a seguir está substituído: <bdo dir="rtl">Quem veio primeiro, a galinha ou o ovo?</bdo></p>
+  <!-- A tag <bdo dir="rtl/ltr"> altera a direção do texto, da esquerda -> direita ou da direita -> esquerda. OBS: Quando o texto é copiado, ele volta a direção comum(da esquerda para a direita[testado no Firefox]). -->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colors</title>
+  <!-- Reset --> 
+  <style> /* A tag style(CSS interno) é adicionada no <head> do arquivo HTML */
+    * {
+      box-sizing: border-box;
+      padding: 0px;
+      margin: 0px;
+      vertical-align: 0px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    É possível mudar a cor de fundo de um elemento HTML e de seu conteúdo também com a seguinte sintaxe: 
+    style="background-color: color_name ou RGB, RGBA, HEX, HSL e HSLA values" 
+  -->
+
+  <h1>Cores</h1> <!-- Valores dispostos por NOME -->
+  <hr>
+  <h2 style="color: mediumseagreen;">Cor do texto</h2>
+  <p style="color: violet;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis magni, voluptatem sint sit pariatur consequatur nihil, neque, corporis sequi tenetur repellat excepturi placeat? Praesentium quidem corporis alias cupiditate voluptatem deleniti!</p>
+  <h2 style="background-color: slateblue; color: white;">Cor de fundo</h2>
+  <p style="background-color: royalblue; color: aliceblue;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis laboriosam dolor ut molestias! Odit impedit aut id magni sint neque? Ex quis quas quo quae dolor. Minima laboriosam iusto accusantium!</p>
+  <h2 style="border: 5px solid greenyellow;">Cores na borda</h2>
+  <p style="border: 5px dotted royalblue;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio rerum optio a deserunt nobis facilis fugit, itaque labore blanditiis sint exercitationem explicabo excepturi voluptates porro. A nobis consectetur maiores non?</p>
+  <p style="border: 10px groove slategray;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet deleniti blanditiis veniam corrupti a. Voluptas in provident optio voluptatum, tempore porro repellendus assumenda exercitationem vel obcaecati deleniti autem perspiciatis odio!</p>
+
+  <!-- Valores dispostos por RGB, HEX, HSL e alphas RGBA e HSLA --> 
+  <h3>Colors RGB, HEX, HSL, RGBA e HSLA</h3>
+  <!-- 
+    RGB significa Red Green Blue, e seus parâmetros formam a cor desejada, com a seguinte fórmula: rgb({red[0,255]},{green[0,255]},{blue[0,255]}), para transparência use o canal Alpha do RGBA, sua fórmula é: rgba({red[0,255]},{green[0,255]},{blue[0,255]},{alpha[0,1]}) 
+  -->
+  <p style="color: rgb(254, 25, 200)">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum iste velit voluptatum delectus magnam perspiciatis quaerat esse nihil nobis tempora ab, animi autem debitis molestiae accusantium harum, eligendi deleniti alias.</p>
+  <p style="color: rgb(150, 150, 150);">Para Cinza em RGB use parâmetros iguais para Red Green e Blue.</p>
+  <p style="color:rgba(25, 150, 255,0.7)">Para transparência </p>
+  <!-- OBS: Para a transparência, usar RGBA (O canal alpha vai de 0 a 1) -->
+
+  <!-- 
+    HEX se firma em valores RR(red), GG(green) e BB(blue). Esses valores formam a cor desejada. Sua sintaxe é: #RRGGBB. Os valores aceitos vão de 00 a ff (0 a 255 em hexadecimal) para ambos os parâmetros. 
+  --> 
+  <p style="color: #ffff45;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione dolor saepe necessitatibus, quas sapiente laudantium praesentium facere minus. Totam adipisci eos quibusdam possimus et cumque enim debitis dolorum. Eius, magnam! </p>
+  <p style="color: #404040">Texto cinza...</p> <!-- Para as cores acinzentadas use valores iguais para ambos os parâmetros. -->
+
+  <!-- 
+    HSL significa Hue(Matiz ou cor), Saturation(Saturação), Lightness(Luminosidade). Ela aceita todas as cores do círculo clomático. O primeiro parâmetro serve para passar o valor da cor desejada presente no círculo das cores([0,360]), 0 = red, 120 = verde e 240 = azul. 
+  
+    A saturação é a intensidade da cor, passada em porcentagem, 100% é a cor pura, viva, 0% é a cor cinza, nada da cor definida pelo matiz.
+
+    A luminosidade é a quantidade de luz que deseja dar à cor, passada em porcentagem, 100% é a cor com luz total(branca) e 0% é a cor sem luz(preta), o ideal é deixar em 50% ou valores próximos do centro, longe das extremidades. 
+
+    Para tons de cinza, usar a matiz e a saturação em 0, e variar a luminosidade. 
+  -->
+  <p style="color: hsl(240, 50%,50%);">Cor de texto em HSL</p>
+  <p style="color: hsl(0, 0%, 60%);">Texto cinza em hsl</p>
+
+  <!-- 
+    HSLA é uma extensão da HSL com um canal Alpha(opacidade). 
+    Sintaxe: hsla(Matiz, Saturação, Luminosidade, Alpha).
+
+    O parâmetro Alpha suporta valores entre 0(totalmente transparente) e 1(nada transparente).
+   -->
+   <p style="color: hsla(120, 100%, 50%, 0.5);">Texto em verde transparente em HSLA</p>
+  
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- Atributos adicionam informações adicionais sobre os elementos que as contêm. 
+  ·Todos os elemetos podem ter atributos;
+  ·Os atributos são sempre espeficicados na tag inicial;
+  ·Os atributos geralmente, vem em pares nome="valor".
+ -->
+<!DOCTYPE html>
+<html lang="pt-BR"><!-- O atributo 'lang' especifica a lingua nativa da página. Esse atributo auxilia os motores de busca e os navegadores. Os dois primeiros caracteres servem para especificar o idioma da página, enquanto os dois últimos servem para especificar o país. -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atributos</title>
+</head>
+<body>
+  <p><a title="Link para a página da W3chools sobre atributos." href="https://www.w3schools.com/html/html_attributes.asp">Página atributos w3schools</a></p>
+  <!-- O atributo 'title' serve para exibir uma dica de ferramenta quando o cursor pairar sob a tag.O atributo 'href' indica o destino do link (URL). -->
+
+  <h1 title="Título da Página">Img</h1>
+  
+  <img title="Imagem com direito de uso livre, fonte: Pexel.com" src="./img/man.jpg" alt="Homem declinado à direita observando o quadro do meio do total de 3, de cor branco, vermelho e cinza escuro." width="800" height="600"> <!-- O atributo 'src' indica o caminho até a fonte do img, já o 'alt' indica uma descrição que é exibida caso a foto não carregue na página. -->
+  <p style="color: red;">Este é um parágrafo vermelho!</p>
+
+  <p title="I'm a tooltip!">This is a paragraph!</p>
+  <p title=About W3Schools>Atributo title sem as aspas, não exibe o conteúdo corretamente.</p>
+
+  <p title="Teste de aspas:'Aspas duplas com aspas simples'">Tooltip aqui!</p>
+  <p title='Teste de aspas:"Aspas duplas com aspas simples"'>Tooltip aqui!</p>
+  <!-- Pode-se usar aspas simples ou duplas. Mas caso tenha que usar aspas dentro do valor do atriuto, é necessário usar o tipo 'oposto' de aspas. -->
+</body>
+</html>

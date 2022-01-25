@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><!-- Conjunto de caracteres. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="refresh" content="10" /><!-- Recarrega a pag à cada 30s. -->
+  <base href=""><!-- Especifica um URL base para os demais links relativos. -->
+  <!-- initial-scale define o zoom inicial em telas diversas. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 
+    O título deve ser o mais preciso e significativo possóvel pois, o algoritmo de CEO é influenciado por ele. Só deve haver caracteres no título.
+  -->
+  <title>Elemento head</title>
+</head>
+<body style="font-family: monospace;"> 
+  <h1 title="Verificar os metadados da página">Elementos do &lt;head&gt;</h1>
+  <img src="./img/appleItems.jpg" alt="Itens da apple" title="Verificar os metadados" style="height: auto;max-width: 100%;">
+  <p id="pTest">Macacooo</p>
+
+  <script>
+    /* A tag de script interno vai no final do <body>! */
+    document.getElementById("pTest").innerHTML = "JS interno!";
+  </script>
+</body>
+</html>

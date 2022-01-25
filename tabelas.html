@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabelas</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      vertical-align: baseline;
+    }
+    table,th,td {
+      border: 3px solid royalblue; /* para a borda da tabela e células */
+      /* border-collapse: collapse; colapsa o layout das bordas */
+
+    }
+    table {border-spacing: 20px;}
+    th,td {padding: 20px;}
+    th {
+      background-color: royalblue;
+      color: whitesmoke;
+      border-style: inset;
+      border-color: dodgerblue;
+    }
+    td {
+      /* background-color: whitesmoke; */
+      border-radius: 5px;
+      text-align: center;
+      border-color: transparent;
+    }
+    tr:nth-child(odd) {background-color: rgba(150, 212, 212, 0.4);}
+    td:nth-child(odd) { /* even altera a ordem para 2, 4, 6, etc. */
+      background-color: rgba(150, 212, 212, 0.4);
+    }
+    tr:hover {
+      background-color: greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    Para criar um tabela, use a tag <table>, para criar linhas use a tag <tr>, para criar um título use <th> e para criar células da tabela use <td>.
+
+    OBS: para uma estrutura mais semântica usar as tag estruturais de tabela:
+      <thead></thead>    = head da tabela, local dos cabeçalhos;
+      <tbody></tbody>    = corpo da tabela, local dos dados;
+      <tfooter><tfooter> = rodapé da tabela, últimas linhas da tabela (não recomendado seu uso pois, muitos navegadores não reconhecem a tag).
+  -->
+  
+  <table style="width: 100%;">
+    <caption>Legenda da tabela</caption> 
+    <!-- 
+      <caption> aqui serve como título da tabela e deve ser inserido imediatamente após o elemento de abertura <table>. 
+    -->
+    
+    <colgroup>
+      <!-- 
+        grupo de colunas para estilização e controle de visibilidade(com a propriedade visibility) 
+      -->
+      <col span="2">
+      <col span="1" style="background-color: blueviolet;visibility: collapse;">
+    </colgroup>
+    <thead>
+      <tr> <!-- tr = table row -->
+        <th colspan="2" style="width: 95%;">Nome/Sobrenome</th>
+        <!-- th = table heading -->
+        <!--
+          O atributo colspan faz com que um cabeçalho preencha mais de uma coluna; use rowspan para as linhas.
+        -->
+        <th>Idade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Samuel</td> <!-- td = table data -->
+        <td>De Souza Tank</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <!-- Técnica de espaço para uma célula vazia(carac. invisível) -->
+        <td>&nbsp;</td> 
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Ellen</td>
+        <td>De Souza Tank</td>
+        <td>19</td>
+      </tr>
+      <tr>
+        <td>Ellen</td>
+        <td>De Souza Tank</td>
+        <td>19</td>
+      </tr>
+      <tr>
+        <td>Ellen</td>
+        <td>De Souza Tank</td>
+        <td>19</td>
+      </tr>
+      <tr>
+        <td>Ellen</td>
+        <td>De Souza Tank</td>
+        <td>19</td>
+      </tr>
+      <tr>
+        <td>Ellen</td>
+        <td>De Souza Tank</td>
+        <td>19</td>
+      </tr>
+      <tr><!-- É possível atribuir altura à linha com width na CSS -->
+        <td>Gabriel</td>
+        <td>De Souza Tank</td>
+        <td>16</td>
+      </tr>
+    </tbody>
+  </table>
+</body>

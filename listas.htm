@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listas</title>
+</head>
+<body>
+  <!-- 
+    As listas são usadas para agrupar itens em formato de lista ordenada, não ordenada ou com descrição.
+    Listas podem ser aninhadas; uma lista dentro de outra.
+  -->
+  <h1>Listas em HTML</h1>
+
+  <h2>Lista ordenada</h2>
+  <!-- 
+    Listas ordenadas podem receber um atributo 'type' para mudar o estilo do marcador de item da lista. 'type' aceita os seguintes valores:
+
+      1 -> marca em ordem numérica;
+      A -> marca em ordem alfabética(mainúscula);
+      a -> marca em ordem alfabética(minúscula);
+      I -> marca em ordem numérica romana(maiúsculo);
+      i -> marca em ordem numérica romana(minúsculo);
+    
+    Caso queira fornece um número de partida, use o atributo 'start'.
+    OBS: Todas as listas podem ser aninhadas.
+  -->
+  <ol type="I" start="5">
+    <li>Item1</li>
+      <ol>
+        <li>Subitem</li>
+        <li>Subitem</li>
+        <li>Subitem</li>
+      </ol>
+    <li>Item2</li>
+    <li>Item3</li>
+  </ol>
+
+  <h2>Lista não ordenada</h2>
+  <ul style="list-style-type: square;">
+    <li>Item1
+      <ol>
+        <li>Subitem</li>
+        <li>Subitem</li>
+        <li>Subitem</li>
+      </ol>
+    </li>
+    <li>Item2</li>
+    <li>Item3</li>
+  </ul>
+
+  <h2>Lista com descrição</h2>
+  <dl>
+    <dt>Item1</dt>
+    <dd>Descrição do Item1</dd>
+    <dt>Item2</dt>
+    <dd>Descrição do Item2</dd>
+    <dt>Item3</dt>
+    <dd>Descrição do Item3</dd>
+  </dl>
+</body>
+</html>

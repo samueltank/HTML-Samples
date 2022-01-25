@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images</title>
+    <style>
+      * {
+        overflow-x: hidden;
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+        vertical-align: baseline;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+      /* 
+      Imagens que são dimensionadas pelos atributos de largura e altura, sofrem alterações de dimensão se seus elementos forem dimenciodos por CSS em uma folha de estilo ou CSS interno 
+      */
+    </style>
+  </head>
+  <body>
+    <h1 title="título da página">Imagens</h1>
+    <!-- 
+      As imagens servem para melhorar a aparência da página e a experiência do usuário, agregando mais valor ao conteúdo.
+    -->
+
+    <!-- Para aplicar uma imagem, use a tag <img> -->
+    <img
+      style="width: calc(30vw + 100px); float: left; margin: 0 10px 10px 0"
+      src="./img/man.jpg"
+      alt="Homem parado na esquerda da imagem, observando o quadro central, com fundo vermelho, entre outros dois quadros"
+    />
+    <p style="display: inline">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos enim
+      modi. Ipsum est, veritatis totam deserunt vitae, fugiat sit temporibus
+      velit, unde nihil soluta quae culpa asperiores pariatur quaerat. Lorem
+      ipsum dolor sit, amet consectetur adipisicing elit. Illo, delectus commodi
+      molestias nihil obcaecati similique quaerat adipisci sequi ab, at
+      architecto veritatis dolores pariatur quia, animi quam beatae est
+      incidunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+      nobis perferendis beatae debitis impedit unde ab. Eius hic laudantium
+      saepe sint sapiente eum ullam obcaecati neque natus? Consequuntur, neque
+      ipsa.
+    </p>
+
+    <!-- 
+      A tag img tem dois atributos obrigatórios. São eles: "src" e "alt".
+      O atributo src especifica o caminho(URL) a qual a imagem se encontra;
+      O atributo alt especifica um texto de contexto para caso a imagem não possa ser carregada.
+      
+      Nota: Caso uma imagem não possa ser carregada no momento, o navegador mostra um ícone de link quebrado e o texto de contexto(valor do "alt").
+    -->
+
+    <!-- 
+      Os valores de altura e largura da imagem podem ser definidos pelo atributo "style" ou pelos atributos "width" e "height".
+      OBS: SEMPRE DEFINA A LARGURA E ALTURA, caso contrário, a página pode piscar enquanto carrega.
+    -->
+    <!-- Imagem com largura e altura definidas pelos atributos -->
+    <img src="./img/alina.jpg" alt="Mulher" width="500" height="450" />
+    <!-- 
+      Entre usar os atributos de largura e altura e usar CSS no atributo style, o mais correto é usar o atributo style, pois ele impede que as folhas de estilo alterem o valor definido no elemento.
+      OBS: Caso a largura e altura sejam definidos com os atributos "width" e "height" os valores são ignorados caso uma folha de estilo dê novos valores aos elementos(como visto na img anterior).
+    -->
+
+    <!-- Podemos aplicar gifs em páginas HTML -->
+    <img
+      src="https://media3.giphy.com/media/W08z7SJE2gQohnnCT2/giphy.gif?cid=790b7611033fa46a82c925aaa800d6afb3ca9f4a3f62efb0&rid=giphy.gif&ct=g"
+      alt="Bruxa transformando um palhaço em fantasma"
+      style="width: 40vw; height: auto; border: 10px groove grey; float: right"
+    />
+
+    <!-- Pode usar uma imagem como link para outra página -->
+    <a href="https://www.google.com.br/" title="página google.com">
+      <img
+        src="https://assets.b9.com.br/wp-content/uploads/2018/03/tenor-3.gif"
+        alt="gif google, logo transformando-se em ícones"
+        style="width: 35vw; height: auto"
+      />
+    </a>
+
+    <!-- 
+      Podemos usar a propriedade CSS float para fornecer à imagem "responsividade" flutuante, à esquerda ou à direita 
+    -->
+    <img
+      src="./img/luis.jpg"
+      alt="Homem parado no ar, no meio da tela, com o corpo curvado para trás"
+      title="Foto estilosa"
+      style="width: 35vw; height: auto; border-radius: 20px"
+    />
+
+    <!-- 
+      Podemos aplicar um mapa de imagem para criar áreas clicáveis em imagens. Para fazer isso basta criar uma tag <map> com o atributo "name" e, dentro dessa tag, colocar tags <area> com os atributos: shape, coords e href.
+      As coordenas são passadas como eixos x e y(x: da esquerda para direita e y: de cima a baixo).
+      
+      O atributo shape aceita 4 valores:
+        rect     = define uma área retangular;
+        circle   = define uma áre circular(eixos x e y, raio);
+        poly     = define um polígono;
+        default  = define toda a extensão do map.
+
+      A única coisa a se acrescentar no elemento <img> é o atributo "usemap" que tem como valor o name do map em formato (#valor).
+    -->
+
+    <img
+      src="./img/appleItems.jpg"
+      alt="Produtos da Apple, notebook, teclado,  iphone e apple watch"
+      usemap="#mapApple"
+      style="width: 50vw; height: auto; display: inline-block"
+    />
+    <map name="mapApple">
+      <area
+        shape="circle"
+        coords="400,400,100"
+        href="https://apple.com.br/"
+        alt="imac pro"
+        id="link"
+        target="_blank"
+      />
+    </map>
+
+    <!-- 
+      Podemos acrescentar uma imagem de fundo para um elemento ou para a página em si. 
+      Para adicionar a imagem de fundo, precisamos usar a propriedade background-image com o url para a imagem:
+    -->
+    <div
+      style="
+        width: 100vw;
+        height: 1000px;
+        background-color: royalblue;
+        display: inline-block;
+        background-image: url(./img/W3Schools_logo.svg);
+        /* até aqui o elemento apresenta repetição da imagem */
+        background-repeat: no-repeat;
+        /* O elemento não se repete mais */
+        background-size: cover; /* preenche todo o elemento */
+        background-size: 50% 50%; /* medidas de largura e altura */
+        background-attachment: fixed; /* medidas */
+        background-position: center;
+      "
+    ></div>
+
+    <!-- 
+      É possível usar um elemento para carregar um tamanho de imagem adequado para o tamanho da tela ou dispositivo, para economizar banda, melhorar a performance e a acessibilidade.
+
+      Os casos mais usados são:
+        1. Ajustar uma mesma imagem(com tamanhos diferentes) para diferentes tamanhos de tela;
+
+        2. Disponibilizar um mesmo conteúdo em diferentes formatos(png, jpg, gif, etc).
+    -->
+
+    <!-- Exemplo de adaptação de uma imagem para diferentes tamanhos -->
+    <picture>
+      <source
+        media="(max-width: 465px)"
+        srcset="./img/mato_400.jpg"
+        type="image/jpg"
+      />
+      <!-- Exemplo de aplicação de adequação de images com <picture>  -->
+      <source
+        media="(max-width: 465px)"
+        srcset="./img/mato_400.jpeg"
+        type="image/jpeg"
+      />
+      <source
+        media="(max-width: 650px)"
+        srcset="./img/mato_600.jpg"
+        type="image/jpg"
+      />
+      <source
+        media="(max-width: 650px)"
+        srcset="./img/mato_600.jpeg"
+        type="image/jpeg"
+      />
+      <!-- Exemplo de aplicação de adequação de images com <picture>  -->
+      <img
+        src="img/nurlam.jpg"
+        alt="Homem"
+        style="width: 50%; height: auto; border: 1vw dashed blueviolet"
+        type="image/jpg"
+      />
+      <!-- 
+        OBRIGATÓRIO, sempre no final colocar um <img>, o estilo dos <source> tem como base o estilo aplicado no elemento <img>. 
+      -->
+    </picture>
+
+    <!-- Exemplo de aplicação de adequação de images com <picture>  -->
+
+    <!-- Podemos usar uma função para abrir um link em uma área -->
+    <script>
+      var myLink = document.querySelector("#link");
+      myLink.addEventListener("click", myFunction);
+      console.log(myLink);
+
+      function myFunction(event) {
+        const retur = window.confirm("quer mesmo sair da página?");
+        if (retur) {
+          window.open("https://apple.com.br/", "Obrigado pela visita!");
+          event.preventDefault();
+        } else {
+          event.preventDefault();
+        }
+      }
+    </script>
+
+    <footer style="width: 100vw; height: 100vh"></footer>
+  </body>
+</html>

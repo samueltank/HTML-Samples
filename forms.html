@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+  <style>
+    * {
+      font-family: monospace;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <form action="./forms.html" method="post" target="_blank" autocomplete="on" novalidate="novalidate">
+    <!-- 
+      Caso o "action" do <form> for omitido, a página atual será setada como manipuladora do formulário.  
+
+      O atributo "target" define o comportamento de abertura da resposta do manipulador de formulário, podendo receber 5 valores:
+
+        _blank      : A resposta é exibida em uma nova janela;
+        _self       : A resposta é exibida na mesma janela;
+        _parent     : A resposta é exibida em um parent frame;
+        _top        : A resposta é exibida em todo o corpo da janela;
+        framename   : A resposta é exibida em um iframe nomeado.
+
+        O atributo "novalidate" indica ao navegador que os dados não devem ser validados quando enviados.
+    -->
+
+    <!-- input do tipo text -->
+    <label for="fName">Nome:</label><br />
+    <input type="text" name="fName" id="fName" value="" maxlength="15" autofocus style="text-align: center;" /><br />
+    <label for="lName">Sobrenome:</label><br />
+    <input type="text" name="lName" id="lName" value="" maxlength="15" style="text-align: center;" /><br />
+
+    <!-- input do tipo radio -->
+    <label>Sexo:</label>
+    <!-- 
+      Nos inputs do tipo radio, é preciso usar o mesmo type e o mesmo name para que apenas uma das opções seja marcada.  
+    -->
+    <input type="radio" name="sexo" id="masc" value="Masculino" />
+    <label for="masc">Masculino</label>
+    <input type="radio" name="sexo" id="fem" value="Feminino" />
+    <label for="fem">Feminino</label><br />
+
+    <!-- input do tipo checkbox -->
+    <label for="">Tecnologias favoritas:</label><br />
+    <input type="checkbox" name="html" id="html" value="HTML" />
+    <label for="html">HTML</label>
+    <input type="checkbox" name="css" id="css" value="CSS" />
+    <label for="css">CSS</label>
+    <input type="checkbox" name="javaScript" id="js" value="JavaScript">
+    <label for="js">JavaScript</label><br />
+
+    <!-- input submit -->
+    <input type="submit" name="sub" id="submit" value="submit">
+    <label for="submit">Enviar</label>
+
+    <!--
+      OBS: TODOS os elementos de formulário devem ter o atributo "name", caso contrário, o conteúdo não será enviado para o manipulador de formulário 
+    -->
+  </form>
+</body>
+</html>

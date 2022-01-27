@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forms</title>
-  <style>
-    * {
-      font-family: monospace;
-      font-size: 1.1rem;
-    }
-  </style>
-</head>
-<body>
-  <form action="./forms.html" method="post" target="_blank" autocomplete="on" novalidate="novalidate">
-    <!-- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="refresh" content="60" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <style>
+      * {
+        font-family: monospace;
+        font-size: 1.1rem;
+      }
+      input[type="submit"] {
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Estrutura de Formulário em HTML</h1>
+    <form
+      action="./forms.html"
+      method="post"
+      target="_blank"
+      autocomplete="on"
+      novalidate="novalidate"
+    >
+      <!-- 
       Caso o "action" do <form> for omitido, a página atual será setada como manipuladora do formulário.  
 
       O atributo "target" define o comportamento de abertura da resposta do manipulador de formulário, podendo receber 5 valores:
@@ -26,40 +37,79 @@
         framename   : A resposta é exibida em um iframe nomeado.
 
         O atributo "novalidate" indica ao navegador que os dados não devem ser validados quando enviados.
-    -->
+      -->
 
-    <!-- input do tipo text -->
-    <label for="fName">Nome:</label><br />
-    <input type="text" name="fName" id="fName" value="" maxlength="15" autofocus style="text-align: center;" /><br />
-    <label for="lName">Sobrenome:</label><br />
-    <input type="text" name="lName" id="lName" value="" maxlength="15" style="text-align: center;" /><br />
+      <!-- input do tipo text -->
+      <fieldset><!-- O elemento <fieldset> agrupa elementos de um formulário -->
+        <legend>Quem é você?</legend><!-- Título do <fieldset> -->
+        <label for="fName">Nome:</label><br />
+        <input
+          type="text"
+          name="fName"
+          id="fName"
+          value=""
+          maxlength="15"
+          required
+          autofocus="autofocus"
+        /><br />
+        <label for="lName">Sobrenome:</label><br />
+        <input
+          type="text"
+          name="lName"
+          id="lName"
+          value=""
+          maxlength="15"
+          required
+        /><br />
+        <!-- input do tipo radio -->
+        <label>Sexo:</label>
+        <!--
+        Nos inputs do tipo radio, é preciso usar o mesmo type e o mesmo name para que apenas uma das opções seja marcada.  
+            -->
+        <input type="radio" name="sexo" id="masc" value="Masculino" />
+        <label for="masc">Masculino</label>
+        <input type="radio" name="sexo" id="fem" value="Feminino" />
+        <label for="fem">Feminino</label><br />
+        <!-- input do tipo checkbox -->
+        <label for="">Tecnologias favoritas:</label><br />
+        <input type="checkbox" name="html" id="html" value="HTML" />
+        <label for="html">HTML</label>
+        <input type="checkbox" name="css" id="css" value="CSS" />
+        <label for="css">CSS</label>
+        <input type="checkbox" name="javaScript" id="js" value="JavaScript" />
+        <label for="js">JavaScript</label><br />
+        <!--
+        OBS: TODOS os elementos de formulário devem ter o atributo "name", caso contrário, o conteúdo não será enviado para o manipulador de formulário
+        -->
+        <!-- Select -->
+        <label for="cars">Escolha um carro:</label>
+        <select name="cars" id="cars" size="1" style="text-align: center">
+          <option value="empty">&nbsp;</option>
+          <option value="camaro">Camaro</option>
+          <option value="gol">Gol</option>
+          <option value="rs7" selected="selected">RS7</option>
+          <option value="r8">R8</option>
+        </select><br />
+        <!-- textarea -->
+        <label for="txtarea" style="float: left;">Observações:</label>
+        <textarea
+          name="txtarea"
+          id="txtarea"
+          cols="30"
+          rows="10"
+          style="resize: none"
+        ></textarea
+        ><br /> <!-- O "resize: nome" impede que a caixa seja redimencionada -->
 
-    <!-- input do tipo radio -->
-    <label>Sexo:</label>
-    <!-- 
-      Nos inputs do tipo radio, é preciso usar o mesmo type e o mesmo name para que apenas uma das opções seja marcada.  
-    -->
-    <input type="radio" name="sexo" id="masc" value="Masculino" />
-    <label for="masc">Masculino</label>
-    <input type="radio" name="sexo" id="fem" value="Feminino" />
-    <label for="fem">Feminino</label><br />
-
-    <!-- input do tipo checkbox -->
-    <label for="">Tecnologias favoritas:</label><br />
-    <input type="checkbox" name="html" id="html" value="HTML" />
-    <label for="html">HTML</label>
-    <input type="checkbox" name="css" id="css" value="CSS" />
-    <label for="css">CSS</label>
-    <input type="checkbox" name="javaScript" id="js" value="JavaScript">
-    <label for="js">JavaScript</label><br />
-
-    <!-- input submit -->
-    <input type="submit" name="sub" id="submit" value="submit">
-    <label for="submit">Enviar</label>
-
-    <!--
-      OBS: TODOS os elementos de formulário devem ter o atributo "name", caso contrário, o conteúdo não será enviado para o manipulador de formulário 
-    -->
-  </form>
-</body>
+        <!-- datalist -->
+        
+        
+        <!-- button -->
+        <button type="button" onclick="window.alert('Hello World!');">CLICK ME</button>
+        <!-- input submit -->
+        <input type="submit" name="Sub" id="submit" value="ENVIAR" />
+        <input type="reset" name="Reset" id="reset" value="LIMPAR" />
+      </fieldset>
+    </form>
+  </body>
 </html>

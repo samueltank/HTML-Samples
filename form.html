@@ -23,10 +23,9 @@
       method="post"
       target="_blank"
       autocomplete="on"
-      novalidate="novalidate"
     >
       <!-- 
-      Caso o "action" do <form> for omitido, a página atual será setada como manipuladora do formulário.  
+      Caso o "action" do <form> seja omitido, a página atual será setada como manipuladora do formulário.  
 
       O atributo "target" define o comportamento de abertura da resposta do manipulador de formulário, podendo receber 5 valores:
 
@@ -91,7 +90,7 @@
           <option value="r8">R8</option>
         </select><br />
         <!-- textarea -->
-        <label for="txtarea" style="float: left;">Observações:</label>
+        <label for="txtarea">Observações:</label><br />
         <textarea
           name="txtarea"
           id="txtarea"
@@ -102,7 +101,15 @@
         ><br /> <!-- O "resize: nome" impede que a caixa seja redimencionada -->
 
         <!-- datalist -->
-        
+        <label for="listInput" title="Lista de browsers setada">Browser favorito:</label>
+        <input id="listInput" list="browsers">
+        <datalist id="browsers">
+          <option value="Edge"></option>
+          <option value="Firefox"></option>
+          <option value="Chrome"></option>
+          <option value="Opera"></option>
+          <option value="Safari"></option>
+        </datalist><br />
         
         <!-- button -->
         <button type="button" onclick="window.alert('Hello World!');">CLICK ME</button>

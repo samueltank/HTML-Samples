@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title>Form Type</title>
+  </head>
+  <body>
+    <h1>Tipos de entrada com &lt;input&gt;</h1>
+    <form action="./formTypes.htm" method="post" autocomplete="on">
+      <!-- Input type text -->
+      <h2>Input type text</h2>
+      <label for="txtfname">Nome:</label><br />
+      <input
+        type="text"
+        id="txtfname"
+        name="fname"
+        value=""
+        required="required"
+      /><br />
+      <label for="txtlname">Sobrenome:</label><br />
+      <input
+        type="text"
+        id="txtlname"
+        name="lname"
+        value=""
+        required="required"
+      />
+
+      <!-- Input type password -->
+      <h2>Input type password</h2>
+      <label for="username">Username:</label><br />
+      <!-- 
+        O atributo placeholder dá uma dica ao usuário sobre o conteúdo esperado no campo de entrada. 
+      -->
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Digite seu username"
+        autofocus="autofocus"
+      /><br />
+      <label for="password">Password:</label><br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Digite sua senha"
+      />
+
+      <!-- Input type submit -->
+      <h2>Input type submit</h2>
+      
+    </form>
+  </body>
+</html>

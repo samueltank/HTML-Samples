@@ -6,53 +6,294 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
     <title>Form Type</title>
+    <style>
+      * {
+        background-color: black;
+        color: ghostwhite;
+        font-size: 1.1rem;
+        font-family: monospace;
+        caret-color: palevioletred;
+      }
+      *::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.226);
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        border: 2px solid palevioletred;
+      }
+      ::placeholder {
+        color: rgba(210, 255, 142, 0.315);
+        font-size: 0.9rem;
+        font-weight: bold;
+        font-style: italic;
+        text-align: start;
+      }
+      :enabled {
+        border-color: rebeccapurple;
+      }
+      input[type="text"]:focus {
+        border: 0.2rem solid rebeccapurple;
+        width: 250px;
+        outline: none; /* Retira linha padrão do :focus */
+      }
+      html {
+        width: 100vw;
+        min-height: 100vh;
+        max-height: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+      }
+      h1 {
+        color: royalblue;
+        font-size: larger;
+        text-transform: uppercase;
+      }
+      h2 {
+        color: palevioletred;
+      }
+      input[type="reset"],
+      input[type="submit"],
+      input[type="button"],
+      input[type="checkbox"],
+      input[type="checkbox"] ~ label,
+      input[type="radio"],
+      input[type="radio"] ~ label {
+        cursor: pointer;
+      }
+      main > p {
+        font-size: xx-small;
+        color: grey;
+        font-style: italic;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
-    <h1>Tipos de entrada com &lt;input&gt;</h1>
-    <form action="./formTypes.htm" method="post" autocomplete="on">
-      <!-- Input type text -->
-      <h2>Input type text</h2>
-      <label for="txtfname">Nome:</label><br />
-      <input
-        type="text"
-        id="txtfname"
-        name="fname"
-        value=""
-        required="required"
-      /><br />
-      <label for="txtlname">Sobrenome:</label><br />
-      <input
-        type="text"
-        id="txtlname"
-        name="lname"
-        value=""
-        required="required"
-      />
+    <main>
+      <h1>Tipos de entrada com &lt;input&gt;</h1>
+      <p>
+        Você preencheria esse formulário? tome MUITO cuidado com formulários :&gt;
+      </p>
+      <form action="./formTypes.htm" method="post" autocomplete="on">
+        <!-- Input type text -->
+        <h2>Input type text</h2>
+        <label for="txtfname">Nome:</label><br />
+        <input
+          type="text"
+          id="txtfname"
+          name="fname"
+          value=""
+          required="required"
+          autofocus="autofocus"
+        /><br />
+        <label for="txtlname">Sobrenome:</label><br />
+        <input
+          type="text"
+          id="txtlname"
+          name="lname"
+          value=""
+          required="required"
+        />
+        <!-- Input type password -->
+        <h2>Input type password</h2>
+        <label for="username">Username:</label><br />
+        <!--
+            O atributo placeholder dá uma dica ao usuário sobre o conteúdo esperado no campo de entrada.
+          -->
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Digite seu username"
+        /><br />
+        <label for="password">Password:</label><br />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Digite sua senha"
+        />
+        <!-- Input type submit -->
+        <h2>Input type submit</h2>
+        <label for="sub">Botão para submit do formulário:</label>
+        <input type="submit" name="submit" value="ENVIAR" />
+          <!-- Se o value for omitido, o botão reseberá um valor padrão. -->
 
-      <!-- Input type password -->
-      <h2>Input type password</h2>
-      <label for="username">Username:</label><br />
-      <!-- 
-        O atributo placeholder dá uma dica ao usuário sobre o conteúdo esperado no campo de entrada. 
-      -->
-      <input
-        type="text"
-        name="username"
-        id="username"
-        placeholder="Digite seu username"
-        autofocus="autofocus"
-      /><br />
-      <label for="password">Password:</label><br />
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Digite sua senha"
-      />
+        <!-- Input type reset -->
+        <h2>Input type reset</h2>
+        <label for="reset">Reset do formulário:</label>
+        <input type="reset" name="reset" id="reset" />
 
-      <!-- Input type submit -->
-      <h2>Input type submit</h2>
-      
-    </form>
+        <!-- Datalist -->
+        <h2>Input com list(&lt;datalist&gt;)</h2>
+        <label for="datalist" title="Sugestão de browsers"
+          >Lista de sugestões:</label
+        >
+        <input
+          type="text"
+          name="txtlist"
+          id="txtlist"
+          list="list"
+          placeholder="Nome de um browser"
+        />
+        <datalist id="list">
+          <option value="Opera" label="Browsers"></option>
+          <option value="Safari" label="Browsers"></option>
+          <option value="Firefox" label="Browsers"></option>
+          <option value="Chrome" label="Browsers"></option>
+          <option value="Edge" label="Browsers"></option>
+        </datalist>
+
+        <!-- Input type radio -->
+        <h2>Input type radio</h2>
+        <p>Sexo:</p>
+        <input type="radio" name="opcSex" id="masculino" value="masculino" />
+        <label for="masculino">Masculino</label>
+        <input type="radio" name="opcSex" id="feminino" value="feminino" />
+        <label for="feminino">Feminino</label>
+          <!-- E para que apenas uma das opções seja aceita -->
+
+        <!-- Input type checkbox -->
+        <h2>Input type checkbox</h2>
+        <p>Você tem algum desses veículos?:</p>
+        <input type="checkbox" name="vhc1" id="vhc1" value="bicicleta" />
+        <label for="vhc1">Eu tenho uma bicicleta</label><br />
+        <input type="checkbox" name="vhc2" id="vhc2" value="carro" />
+        <label for="vhc2">Eu tenho um carro</label><br />
+        <input type="checkbox" name="vhc3" id="vhc3" value="Moto" />
+        <label for="vhc3">Eu tenho uma moto</label>
+
+        <!-- Input type button -->
+        <h2>Input type button</h2>
+        <input
+          type="button"
+          name="btnHello"
+          id="btnHello"
+          value="Click me!"
+          onclick="window.alert('Hello World!')"
+        ></input><br />
+
+        <!-- Input type color -->
+        <h2>Input type color</h2>
+        <label for="favColor">Selecione a sua cor favorita:</label>
+        <input type="color" name="favColor" id="favColor">
+
+        <!-- Input type date -->
+        <h2>Input type date</h2>
+        <label for="birthday">Quando você faz aniversário?:</label>
+        <input 
+          type="date" 
+          name="birthday" 
+          id="birthday" 
+          min="1900-01-01" 
+          max="2022-01-01"
+        />
+          <!-- 
+            É possível limitar o período aceito como data, com os atributos min e max. 
+          -->
+
+        <!-- Input type email -->
+        <h2>Input type email</h2>
+        <label for="myEmail">Coloque o seu email:</label>
+        <input type="email" name="myEmail" id="myEmail" placeholder="Insira seu e-mail" size="30">
+        
+        <!-- Input type file -->
+        <h2>Input type file</h2>
+        <label for="myFile">Selecione os arquivos</label>
+        <input type="file" name="myFile" id="myFile" value="fileSelected" multiple>
+          <!-- 
+            O input file armazena o arquivo selecionado para upload e o atributo multiple permite a seleção de vários arquivos.
+          -->
+        
+        <!-- Input type hidden -->
+        <h2>Input type hidden</h2>
+          <!-- 
+            O input type hidden serve para criar um campo de entrada não visível ao cliente(mas pode ser acessado pelo debugger do navegador e modificado pelo mesmo). 
+          -->
+        <input type="hidden" name="txtHidden" id="codeID" >
+        <label for="codeID">Campo de entrada oculto:</label>
+
+        <!-- Input type month -->
+        <h2>Input type month</h2>
+        <label for="bday">Aniversário:</label>
+        <input type="month" name="bday" id="bday">
+
+        <!-- Input type number -->
+        <h2>Input type number</h2>
+        <label for="quantity">Quantidade(entre 0 e 100):</label>
+        <input 
+          type="number" 
+          name="quantity" 
+          id="quantity" 
+          min="0" 
+          max="100" 
+          step="10" 
+          value="30"
+        />
+
+        <!-- Input type range -->
+        <h2>Input type range</h2>
+        <label for="vol">Volume:</label>
+        <input 
+          type="range" 
+          name="vol" 
+          id="vol"
+          list="volOpc"
+          style="color: white;"
+        />
+        <datalist id="volOpc">
+          <option value="0" label="0%"></option>
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50" label="50%"></option>
+          <option value="60"></option>
+          <option value="70"></option>
+          <option value="80"></option>
+          <option value="90"></option>
+          <option value="100" label="100%"></option>
+        </datalist>
+
+        <!-- Input type search -->
+        <h2>Input type search</h2>
+        <label for="inpSearch">Campo de pesquisa:</label>
+        <input type="search" name="inpSearch" id="inpSearch">
+          <!-- Campo usado para fazer pesquisa em uma aplicação web. -->
+
+        <!-- Input type tel -->
+        <h2>Input type tel</h2>
+        <label for="tel">Telefone:</label>
+        <input 
+          type="tel" 
+          name="tel" 
+          id="tel" 
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+        />
+
+        <!-- Input type time -->
+        <h2>Input type time</h2>
+        <label for="time">Escolha um horário:</label>
+        <input type="time" name="time" id="time">
+
+        <!-- Input type url -->
+        <h2>Input type url</h2>
+        <label for="url">Adicione sua página favorita:</label>
+        <input type="url" name="url" id="url">
+
+        <!-- Input type week -->
+        <h2>Input type week</h2>
+        <label for="week">Adicione uma semana e um ano:</label>
+        <input type="week" name="week" id="week">
+      </form>
+    </main>
   </body>
 </html>

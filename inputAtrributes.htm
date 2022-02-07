@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Atrribute</title>
+    <style>
+      :root {
+        /* Representa o elemento raíz(o elemento html) */
+        --main-color: hotpink;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        vertical-align: baseline;
+      }
+      body {
+        min-height: 100vh;
+        min-width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: monospace;
+        font-size: 2rem;
+        background-color: var(--main-color);
+        overflow-x: clip; /* Desabilita toda(inclusize a programática) rolagem no eixo x */
+        overflow-y: scroll; /* Aplica a barra de rolagem no eixo y */
+      }
+      form {
+        padding: 2rem;
+        min-height: 50%;
+        min-width: 35%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+      }
+      h1 {
+        text-transform: uppercase;
+      }
+      input {
+        font-size: 2rem;
+        /* padding-left: 1rem; */
+      }
+      input[type="range"] {
+        padding: 0;
+      }
+      input[list] {
+        caret-color: transparent;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Input atrributes</h1>
+    <form
+      action="./inputAtrributes.htm"
+      id="form"
+      target="_self"
+      autocomplete="on"
+      oninput="result.value=parseInt(range.value);"
+    >
+      <!-- Atributo de valor -->
+      <h2>Atrribute value:</h2>
+      <label for="valueatrr">Input com value:</label>
+      <input
+        type="text"
+        name="txtvalue"
+        id="txtvalue"
+        value="Samuel"
+        title="O valor já vem definido"
+      />
+      <!-- 
+        O atributo 'value' serve para iniciar um campo de entrada com um valor pré-definido. 
+      -->
+
+      <!-- Atributo readonly -->
+      <h2>Atrribute readonly:</h2>
+      <label for="txtreadonly">Input com readonly:</label>
+      <input
+        type="text"
+        name="txtreadonly"
+        id="txtreadonly"
+        value="readonly"
+        readonly="readonly"
+        title="O valor não pode ser alterado!, apenas pode ser visto e copiado(pelo cliente)"
+      />
+      <!-- 
+        O Atributo 'readonly' faz com que o conteúdo do campo de entrada, não possa ser alterado. O cliente só consegue selecionar e copiar o conteúdo.
+      -->
+
+      <!-- Atributo disabled -->
+      <h2>Atrribute disabled:</h2>
+      <label for="txtdisabled">Input com disabled:</label>
+      <input
+        type="text"
+        name="txtdisa"
+        id="txtdisa"
+        value="disabled"
+        disabled="disabled"
+      />
+      <!-- 
+        O campo de entrada se torna inutilizável.
+        CUIDADO: O conteúdo dentro de um campo de entrada com o atributo disabled não é enviado no submit do form.
+      -->
+
+      <!-- Atributo size -->
+      <h2>Atrribute size:</h2>
+      <label for="txtsize">Input com size:</label>
+      <input
+        type="text"
+        name="txtsize"
+        id="txtsize"
+        value="size=30"
+        size="30"
+        readonly="readonly"
+      />
+      <!--
+        O atributo size define a largura do campo de entrada de acordo com o valor em caracteres(size="30", o campo terá uma largura de 30 caracteres).
+        Esse atributo só funciona nos seguintes inputs: text, search, tel, url, email e password. 
+      -->
+
+      <!-- Atributo maxlength -->
+      <h2>Atrribute maxlength:</h2>
+      <label for="txtmax">Input com maxlength:</label>
+      <input
+        type="text"
+        name="txtmax"
+        id="txtmax"
+        value="tester"
+        maxlength="5"
+        readonly="readonly"
+      />
+      <!-- 
+        O atributo 'maxlength' serve para aplicar um número máximo de caracteres permitido no campo de entrada.
+      -->
+
+      <!-- Atributo multiple -->
+      <h2>Atrribute multiple:</h2>
+      <label for="files">Input com multiple:</label>
+      <input type="file" name="files" id="files" multiple="multiple" />
+      <!-- 
+        O atributo 'multiple' permite que mais de um arquivo ou e-mail seja enviado para o manipulador de formulário.
+      -->
+
+      <!-- Atributo pattern -->
+      <h2>Atrribute pattern:</h2>
+      <label for="txtpattern">Input com pattern:</label>
+      <input
+        type="text"
+        name="txtpattern"
+        id="txtpattern"
+        pattern="[A-Za-z]{3}"
+        title="Three letter country code"
+      />
+      <!-- 
+        O atributo 'pattern' faz com que o conteúdo/valor do campo de entrada seja validado pelo valor do 'pattern' no momento de submit. 
+      -->
+
+      <!-- Atributo placehold -->
+      <h2>Atrribute placehold:</h2>
+      <label for="txtplace">Input com placehold:</label>
+      <input
+        type="text"
+        name="txtplace"
+        id="txtplace"
+        placeholder="123-45-789"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+      />
+      <!--
+         O atributo 'placehold' serve para descrever uma dica sobre o valor esperado no campo de entrada do form. 
+      -->
+
+      <!-- Atributo required -->
+      <h2>Atrribute required:</h2>
+      <label for="txtrequired">Input com required:</label>
+      <input
+        type="text"
+        name="txtrequired"
+        id="txtrequired"
+        required="required"
+      />
+      <!-- 
+        O atributo 'required' não permite que o formulário seja enviado sem antes que todos os campos de entradas marcados com o atributo sejam preenchidos. 
+      -->
+
+      <!-- Atributo step -->
+      <h2>Atrribute step:</h2>
+      <label for="txtstep">Input com step:</label>
+      <input
+        type="range"
+        name="range"
+        id="range"
+        min="-100"
+        max="100"
+        step="10"
+        value="0"
+      />
+      <output name="result" id="result" form="form" for="range">50</output>
+      <!-- 
+        O atributo 'step' permite criar um intervalo com um período definido.
+        OBS: Para quaisquer valores decimais, usar o valor 'any'.
+      -->
+
+      <!-- Atributo autofocus -->
+      <h2>Atrribute autofocus:</h2>
+      <label for="txtauto">Input com autofocus:</label>
+      <input type="text" name="txtauto" id="txtauto" autofocus="autofocus" />
+      <!-- 
+        O atributo 'autofocus' foca em um campo de entrada assim que a página é carregada pelo navegador. 
+      -->
+
+      <!-- Atributo list -->
+      <h2>Atrribute list:</h2>
+      <label for="select">Input com list:</label>
+      <input name="select" id="select" list="list" contenteditable="false" />
+      <datalist id="list">
+        <option value="brave"></option>
+        <option value="brave"></option>
+        <option value="brave"></option>
+        <option value="brave"></option>
+        <option value="brave"></option>
+      </datalist>
+      <!--
+         O atributo 'list' serve para linkar uma lista de opções contidas em um <datalist> ao input, pelo id do <datalist>. 
+      -->
+
+      <!-- Atributo autocomplete -->
+      <h2>Atrribute autocomplete:</h2>
+      <label for="autocomple">Input email com autocomple:</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        autocomplete="email"
+        size="30"
+      />
+      <!-- 
+        O atributo 'autocomplete' serve para autocompletar possíveis campos de entrada. Ele usa os valores armazenados pelo navegador para sugeir entradas.
+        O atributo pode receber vários valores; os mais comuns são: 'on' ou 'off'. 
+        
+        O atributo pode ser aplicado nos elementos: <form> e <input>.
+      -->
+    </form>
+  </body>
+</html>

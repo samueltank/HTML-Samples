@@ -18,12 +18,7 @@
   </head>
   <body>
     <h1>Estrutura de Formulário em HTML</h1>
-    <form
-      action="./forms.html"
-      method="post"
-      target="_blank"
-      autocomplete="on"
-    >
+    <form action="./forms.html" method="post" target="_blank" autocomplete="on">
       <!-- 
       Caso o "action" do <form> seja omitido, a página atual será setada como manipuladora do formulário.  
 
@@ -39,8 +34,10 @@
       -->
 
       <!-- input do tipo text -->
-      <fieldset><!-- O elemento <fieldset> agrupa elementos de um formulário -->
-        <legend>Quem é você?</legend><!-- Título do <fieldset> -->
+      <fieldset>
+        <!-- O elemento <fieldset> agrupa elementos de um formulário -->
+        <legend>Quem é você?</legend>
+        <!-- Título do <fieldset> -->
         <label for="fName">Nome:</label><br />
         <input
           type="text"
@@ -87,8 +84,8 @@
           <option value="camaro">Camaro</option>
           <option value="gol">Gol</option>
           <option value="rs7" selected="selected">RS7</option>
-          <option value="r8">R8</option>
-        </select><br />
+          <option value="r8">R8</option></select
+        ><br />
         <!-- textarea -->
         <label for="txtarea">Observações:</label><br />
         <textarea
@@ -98,21 +95,26 @@
           rows="10"
           style="resize: none"
         ></textarea
-        ><br /> <!-- O "resize: nome" impede que a caixa seja redimencionada -->
+        ><br />
+        <!-- O "resize: nome" impede que a caixa seja redimencionada -->
 
         <!-- datalist -->
-        <label for="listInput" title="Lista de browsers setada">Browser favorito:</label>
-        <input id="listInput" list="browsers">
+        <label for="listInput" title="Lista de browsers setada"
+          >Browser favorito:</label
+        >
+        <input id="listInput" list="browsers" />
         <datalist id="browsers">
           <option value="Edge"></option>
           <option value="Firefox"></option>
           <option value="Chrome"></option>
           <option value="Opera"></option>
-          <option value="Safari"></option>
-        </datalist><br />
-        
+          <option value="Safari"></option></datalist
+        ><br />
+
         <!-- button -->
-        <button type="button" onclick="window.alert('Hello World!');">CLICK ME</button>
+        <button type="button" onclick="window.alert('Hello World!');">
+          CLICK ME
+        </button>
         <!-- input submit -->
         <input type="submit" name="Sub" id="submit" value="ENVIAR" />
         <input type="reset" name="Reset" id="reset" value="LIMPAR" />

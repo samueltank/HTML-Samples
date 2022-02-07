@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classes & ID's</title>
-  <style>
-    .capital {
-      background-color: dodgerblue;
-      color: white;
-      text-transform: uppercase;
-      font-family: monospace;
-      font-weight: bold;
-    }
-    .main {
-      text-shadow: 2px 1px black;
-    }
-  </style>
-</head>
-<body>
-  <!-- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes & ID's</title>
+    <style>
+      .capital {
+        background-color: dodgerblue;
+        color: white;
+        text-transform: uppercase;
+        font-family: monospace;
+        font-weight: bold;
+      }
+      .main {
+        text-shadow: 2px 1px black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
     Classes são usadas para dar um funcionalidades em CSS e JavaScript para um ou mais elementos HTML.
     Para atribuir um class name para um elemento HTML use o atributo class:
 
@@ -39,39 +39,39 @@
 
   -->
 
-  <h1>Classes e ID's</h1>
-  <h2 class="capital main">Brasil</h2>
-  <p>A capital do Brasil é Brasília</p>
-  <h2 class="capital">Estados Unidos</h2>
-  <p>A capital dos EUA é Washington D.C.</p>
-  <h2 class="capital">Russia</h2>
-  <p>A capital da Rússia é Moscou</p>
-  <button name="bMudarText" type="button" id="btxt">Clique</button>
+    <h1>Classes e ID's</h1>
+    <h2 class="capital main">Brasil</h2>
+    <p>A capital do Brasil é Brasília</p>
+    <h2 class="capital">Estados Unidos</h2>
+    <p>A capital dos EUA é Washington D.C.</p>
+    <h2 class="capital">Russia</h2>
+    <p>A capital da Rússia é Moscou</p>
+    <button name="bMudarText" type="button" id="btxt">Clique</button>
 
-  <!-- Pegando classes com JavaScript: -->
-  <script>
-    const b = document.getElementById("btxt");
-    // Seleciona o elemento pela class "capital";
-    const header = document.getElementsByClassName("capital");
-    var content = header[1].innerHTML;
+    <!-- Pegando classes com JavaScript: -->
+    <script>
+      const b = document.getElementById("btxt");
+      // Seleciona o elemento pela class "capital";
+      const header = document.getElementsByClassName("capital");
+      var content = header[1].innerHTML;
 
-    b.addEventListener('click', myFunction);
-    console.log(content);
+      b.addEventListener("click", myFunction);
+      console.log(content);
 
-    function myFunction(event) {
-      // caso tenha a class, ele exclui, caso não tenha, ele cria! (fantástico!)
-      header[1].classList.toggle("city"); 
+      function myFunction(event) {
+        // caso tenha a class, ele exclui, caso não tenha, ele cria! (fantástico!)
+        header[1].classList.toggle("city");
 
-      const status = header[1].classList.contains("city");
-      console.log(status);
+        const status = header[1].classList.contains("city");
+        console.log(status);
 
-      if (status) {
-        header[1].innerHTML = "Have a nice day!";
-      } else {
-        header[1].innerHTML = content;
+        if (status) {
+          header[1].innerHTML = "Have a nice day!";
+        } else {
+          header[1].innerHTML = content;
+        }
+        event.preventDefault();
       }
-      event.preventDefault();
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>

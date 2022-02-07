@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      vertical-align: baseline;
-      box-sizing: border-box;
-      font-size: 26px;
-      font-family: monospace;
-    }
-  </style>
-</head>
-<body>
-  <!-- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        vertical-align: baseline;
+        box-sizing: border-box;
+        font-size: 26px;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
     Para executar JavaScript em uma página web podemos usar as tags para scripts internos ou externos.
 
     JS interno: <script>conteúdo...</script>
     JS externo: <script src="caminho"></script>
   -->
-  <h1 title="Título da página" id="hTest">JavaScript</h1>
-  <p id="pTest">Teste com JavaScript...</p>
+    <h1 title="Título da página" id="hTest">JavaScript</h1>
+    <p id="pTest">Teste com JavaScript...</p>
 
-  <script>
-    /* Alterando o HTML com JS */
-    const pTest = document.getElementById("pTest"); 
-    pTest.innerHTML = "Texto alterado com JS!";
-    pTest.style.color = "dodgerblue";
-    pTest.style.fontSize = "40px";
-    pTest.style.textTransform = "uppercase";
-    pTest.classList = "test";
-    console.log(pTest.classList);
-  </script>
-  <!-- Caso o cliente não suporte scripts: -->
-  <noscript>
-    <p>Infelizmente, seu navegador não suporta scripts. :d</p>
-  </noscript>
-</body>
+    <script>
+      /* Alterando o HTML com JS */
+      const pTest = document.getElementById("pTest");
+      pTest.innerHTML = "Texto alterado com JS!";
+      pTest.style.color = "dodgerblue";
+      pTest.style.fontSize = "40px";
+      pTest.style.textTransform = "uppercase";
+      pTest.classList = "test";
+      console.log(pTest.classList);
+    </script>
+    <!-- Caso o cliente não suporte scripts: -->
+    <noscript>
+      <p>Infelizmente, seu navegador não suporta scripts. :d</p>
+    </noscript>
+  </body>
 </html>

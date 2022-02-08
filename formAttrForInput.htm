@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form - Atributos form para input</title>
+  </head>
+  <body>
+    <h1>Atributos &lt;form&gt; para Inputs</h1>
+    <!-- 
+      Situação na qual o form recebe mais um componente(input), não filho do <form> (exemplo abaixo):
+    -->
+    <form action="./formAttrForInput.htm" id="formid">
+      <label for="txtfname">First Name:</label>
+      <input type="text" name="txtfname" id="txtfname" required="required" />
+      <input type="submit" name="btnsub" id="btnsub" value="Enviar" />
+    </form>
+    <!-- O conteúdo abaixo(até o primeiro input) faz parte do <form> acima. -->
+    <label for="txtlname">Last name:</label>
+    <input
+      type="text"
+      name="txtlname"
+      id="txtlname"
+      form="formid"
+      required="required"
+    />
+    <hr />
+    <form action="./formAttrForInput.htm" method="post" id="formaction">
+      <label for="txtname">Em qual cidade você mora?</label>
+      <input type="text" name="txtcity" id="txtcity" />
+      <input
+        type="submit"
+        value="Enviar"
+        formaction="./outro_manipulador.php"
+      />
+      <input
+        type="submit"
+        value="Enviar W3"
+        formaction="./manipulador_w3.php"
+      />
+      <!--
+        O atributo 'formaction' substitui o atributo 'action' do <form>.
+        O atributo pode ser aplicado em <input> do tipo submit e image. 
+      -->
+    </form>
+    <hr />
+    <form action="./manipulador_binary.asp" method="post">
+      <label for="animal">Qual seu animal ?</label>
+      <input type="text" name="txtanimal" id="txtanimal" />
+      <input type="submit" value="Enviar" />
+      <input type="submit" formenctype="multipart/form-data" accesskey="s" />
+      <!-- 
+        O atributo 'formenctype' trata da forma como os dados serão gerenciados ao serem submetidos pelo formulário. Três opções são aceitas(Consultar a MDN : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit#formenctype).
+      -->
+    </form>
+    <hr />
+    <form action="./formAttrForInput.htm">
+      <label for="txtcarro">Qual carro você gostaria de ganhar?</label>
+      <input type="text" name="carro-name" id="carro-name" />
+      <input type="submit" value="Enviar" />
+      <input
+        type="submit"
+        value="Enviar nova janela/guia"
+        formtarget="_blank"
+      />
+      <!-- 
+        O atributo 'formtarget' substitui o 'target' do <form>.
+      -->
+    </form>
+    <hr>
+    <form action="./formAttrForInput.htm">
+      <label for="txtemail">Insira seu e-mail:</label>
+      <input type="email" name="emailtxt" id="emailtxt">
+      <input type="submit" value="Enviar">
+      <input type="submit" value="Enviar sem validação" formnovalidate="formnovalidate">
+      <!-- 
+        O atributo 'formnovalidade' diz ao navegador que o campo de entrada não deve ser verificado quando submetido. 
+      -->
+    </form>
+    <hr>
+    <form action="./formAttrForInput.htm" novalidate="novalidate">
+      <label for="txtcor">Qual a sua cor favorita?</label>
+      <input type="text" name="txtcor" id="txtcor">
+      <!-- 
+        O atributo 'novalidate' faz com que o conteúdo(dados do formulário) não seja validado pelo navegador ao ser submetido. 
+      -->
+    </form>
+  </body>
+</html>

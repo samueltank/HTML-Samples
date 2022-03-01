@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        vertical-align: baseline;
+      }
+      body {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      svg {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      SVG significa Scalable Vector Graphics e é usado para desenhar gráficos
+      vetorias em páginas web.  
+    -->
+
+    <!-- círculo em SVG: -->
+    <svg viewBox="0 0 600 600" style="background-color: rgb(0, 0, 0)">
+      <circle
+        cx="20%"
+        cy="20%"
+        r="10%"
+        stroke="red"
+        stroke-width="4"
+        fill="yellow"
+      />
+
+      <!-- <g> é um agrupamento que passa seus estilos para seus filhos: -->
+      <g style="fill: white; stroke: green; stroke-width: 5">
+        <circle cx="500" cy="100" r="40" />
+        <circle cx="520" cy="120" r="40" />
+        <circle cx="540" cy="100" r="40" />
+      </g>
+
+      <!-- retângulo em SVG: -->
+      <rect
+        x="20%"
+        y="10%"
+        rx="15"
+        ry="15"
+        width="15%"
+        height="15%"
+        style="fill: red; stroke: black; stroke-width: 5; opacity: 0.5"
+      />
+
+      <!-- Polígono em SVG: -->
+      <polygon
+        points="300, 210 240, 398 390, 278 210, 278 360, 398"
+        style="fill: lime; stroke: purple; stroke-width: 5; fill-rule: evenodd"
+      />
+
+      <!-- 
+        <defs> armazena objetos SVG para uso posterior. Para usar use <use>: 
+      -->
+      <defs>
+        <circle id="myCircle" cx="0" cy="0" r="50" />
+
+        <linearGradient id="myGradient" gradientTransform="rotate(20)">
+          <stop offset="20%" stop-color="gold" />
+          <stop offset="90%" stop-color="red" />
+        </linearGradient>
+      </defs>
+
+      <use href="#myCircle" x="70%" y="70%" fill="url('#myGradient')" />
+
+      <!-- logotipo em SVG: -->
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="gold" stop-opacity="1" />
+          <stop offset="100%" stop-color="red" stop-opacity="1" />
+        </linearGradient>
+      </defs>
+      <ellipse cx="100" cy="300" rx="85" ry="55" fill="url(#grad1)" />
+      <text x="55" y="315" fill="#ffffff" font-size="50" font-family="Consolas">
+        Sam
+      </text>
+      <!-- menssagem de incompatibilidade -->
+      Ops... parece que seu navegador não suporta SVG...
+    </svg>
+  </body>
+</html>
